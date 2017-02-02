@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# Hook: pre-commit
+# Desc: run tests on master branch
+
+branch=`git rev-parse --abbrev-ref HEAD`
+
+if [ "$branch" = "master" ]; then
+  make test
+fi
